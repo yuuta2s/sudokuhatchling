@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Button from Sudoku Figma (1).svg",
+      "filename" : "BtnSolve.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "BtnSolve@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "BtnSolve@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -13,10 +13,24 @@ struct SudokuGrid: View {
     @State var isCellSelected : Bool = false
     @State var numEntered : Int = 0
     @State var isSolved : Bool = false
+    @State private var errorCells: Set<[Int]> = []
+    
     
     var body: some View {
         @Bindable var router = router
         VStack {
+            HStack(alignment: .firstTextBaseline){
+                Button(action: {
+                   
+                }, label: {
+                    Image(.closeButton)
+                        .resizable()
+                        .scaledToFit().frame(width: 36,height: 36)
+                }).padding(.leading,40)
+                
+                Text("Eggshell Level").font(.summaryNotes(size: 20)) //niveau récup + difficulty (un autre enum)
+                Spacer()
+            }
             if !vm.sudokuGrid.isEmpty{
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(20)), count: 9),spacing: 0) {
                     ForEach(0..<9, id: \.self) { row in
@@ -28,12 +42,15 @@ struct SudokuGrid: View {
                                     .background(selectedCell.masterGridindex == row &&
                                                 selectedCell.valueIndex == col && value == 0
                                                 ? Color.blue.opacity(0.5)
+                                                : errorCells.contains([row, col])
+                                                ? Color.red.opacity(0.5)
                                                 : Color.white)
                                     .onTapGesture{
-                                        if value == 0 {
+                                        let cell = [row, col]
+                                        if value == 0 || errorCells.contains(cell) {
                                             selectedCell = SelectedCell(masterGridindex: row, valueIndex: col)
                                             isCellSelected = true
-                                        }else{
+                                        } else {
                                             isCellSelected = false
                                         }
                                     }.border(Color.gray)
@@ -51,7 +68,10 @@ struct SudokuGrid: View {
             Button(action: {
                 solveSudokuGrid()
             }, label: {
-                Text("Solve").font(.summaryNotes(size: 32)).foregroundStyle(.red)
+                Image(.btnSolve)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 318, height: 82)
             }).padding(.top,40)
         }
         .onAppear {
@@ -64,44 +84,59 @@ struct SudokuGrid: View {
 
 private extension SudokuGrid {
     private func solveSudokuGrid(){
-        if vm.sudokuGrid.elementsEqual(vm.solvedGrid){
-          isSolved =  true
+        errorCells.removeAll()
+        
+        for row in 0..<9 {
+            for col in 0..<9 {
+                if vm.sudokuGrid[row][col] != 0 && vm.sudokuGrid[row][col] != vm.solvedGrid[row][col] {
+                    errorCells.insert([row, col])
+                }
+            }
+        }
+        if errorCells.isEmpty{
+            isSolved =  true
             goToCompleted()
             print("Grille complétée \(isSolved)")
         }else {
-           isSolved = false
+            isSolved = false
             print("Grille erronée")
             
         }
     }
-       
+    
     private func goToCompleted(){
         router.homeRoutes.append(.completedGame)
     }
     
     private func showNumButtons()-> some View{
-        LazyVGrid(columns: Array(repeating: GridItem(.fixed(50)), count: 5),spacing: 10){
+        LazyVGrid(columns: Array(repeating: GridItem(.fixed(60)), count: 5),spacing: 10){
             ForEach(1...10, id: \.self) { num in
                 Button(action: {
                     if isCellSelected{
-                            vm.sudokuGrid[selectedCell.masterGridindex][selectedCell.valueIndex] = num
+                        vm.sudokuGrid[selectedCell.masterGridindex][selectedCell.valueIndex] = num
                     }
                     if num == 10 {
                         vm.sudokuGrid[selectedCell.masterGridindex][selectedCell.valueIndex] = 0
                     }
+                    
+                    
                 }, label: {
-                    if num == 10 {
-                        Image(systemName: "delete.left")
-                            .frame(width: 50, height: 50)
-                            .foregroundStyle(.black)
-                            .background(.gray.opacity(0.2))
+                    ZStack {
+                        Circle()
+                            .fill(Color.gray.opacity(0.2))
+                            .frame(width: 60, height: 60)
                         
-                    }else{
-                        Text("\(num)")
-                            .frame(width: 50, height: 50)
-                            .foregroundStyle(.black)
-                            .background(.gray.opacity(0.2))
-                    }})
+                        if num == 10 {
+                            Image(systemName: "delete.left")
+                                .foregroundStyle(.black)
+                        } else {
+                            Text("\(num)")
+                                .foregroundStyle(.black)
+                                .font(.headline)
+                        }
+                    }
+                }
+                )
             }
         }
     }

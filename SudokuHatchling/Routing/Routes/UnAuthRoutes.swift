@@ -16,7 +16,7 @@ enum UnAuthRoutes: Hashable{
     func destination(appState: Binding<AppState>) -> some View{
         switch self{
         case .signIn:
-            LoginView()
+            LoginView(appState: appState)
         case .signUp:
             RegisterView()
         }
