@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62D3B0DE2DAFEF3D0033C12D /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 62D3B0DD2DAFEF3D0033C12D /* Auth */; };
+		62D3B0E02DAFEF3D0033C12D /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 62D3B0DF2DAFEF3D0033C12D /* Functions */; };
+		62D3B0E22DAFEF3D0033C12D /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 62D3B0E12DAFEF3D0033C12D /* PostgREST */; };
+		62D3B0E42DAFEF3D0033C12D /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 62D3B0E32DAFEF3D0033C12D /* Realtime */; };
+		62D3B0E62DAFEF3D0033C12D /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 62D3B0E52DAFEF3D0033C12D /* Storage */; };
+		62D3B0E82DAFEF3D0033C12D /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 62D3B0E72DAFEF3D0033C12D /* Supabase */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		62D3B0A52DAFE6AF0033C12D /* SudokuHatchling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SudokuHatchling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		62BE8E492DB23D6C002F8C42 /* Exceptions for "SudokuHatchling" folder in "SudokuHatchling" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 62D3B0A42DAFE6AF0033C12D /* SudokuHatchling */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		62D3B0A72DAFE6AF0033C12D /* SudokuHatchling */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				62BE8E492DB23D6C002F8C42 /* Exceptions for "SudokuHatchling" folder in "SudokuHatchling" target */,
+			);
+			path = SudokuHatchling;
+			sourceTree = "<group>";
+		};
+		62D3B0B52DAFE6B10033C12D /* SudokuHatchlingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SudokuHatchlingTests;
+			sourceTree = "<group>";
+		};
+		62D3B0BF2DAFE6B10033C12D /* SudokuHatchlingUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SudokuHatchlingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62D3B0A22DAFE6AF0033C12D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62D3B0E22DAFEF3D0033C12D /* PostgREST in Frameworks */,
+				62D3B0E02DAFEF3D0033C12D /* Functions in Frameworks */,
+				62D3B0E82DAFEF3D0033C12D /* Supabase in Frameworks */,
+				62D3B0DE2DAFEF3D0033C12D /* Auth in Frameworks */,
+				62D3B0E62DAFEF3D0033C12D /* Storage in Frameworks */,
+				62D3B0E42DAFEF3D0033C12D /* Realtime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		62D3B09C2DAFE6AF0033C12D = {
+			isa = PBXGroup;
+			children = (
+				62D3B0A72DAFE6AF0033C12D /* SudokuHatchling */,
+				62D3B0B52DAFE6B10033C12D /* SudokuHatchlingTests */,
+				62D3B0BF2DAFE6B10033C12D /* SudokuHatchlingUITests */,
+				62D3B0DC2DAFEF3D0033C12D /* Frameworks */,
+				62D3B0A62DAFE6AF0033C12D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		62D3B0A62DAFE6AF0033C12D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62D3B0A52DAFE6AF0033C12D /* SudokuHatchling.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62D3B0DC2DAFEF3D0033C12D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62D3B0A42DAFE6AF0033C12D /* SudokuHatchling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62D3B0C62DAFE6B10033C12D /* Build configuration list for PBXNativeTarget "SudokuHatchling" */;
+			buildPhases = (
+				62D3B0A12DAFE6AF0033C12D /* Sources */,
+				62D3B0A22DAFE6AF0033C12D /* Frameworks */,
+				62D3B0A32DAFE6AF0033C12D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				62D3B0A72DAFE6AF0033C12D /* SudokuHatchling */,
+			);
+			name = SudokuHatchling;
+			packageProductDependencies = (
+				62D3B0DD2DAFEF3D0033C12D /* Auth */,
+				62D3B0DF2DAFEF3D0033C12D /* Functions */,
+				62D3B0E12DAFEF3D0033C12D /* PostgREST */,
+				62D3B0E32DAFEF3D0033C12D /* Realtime */,
+				62D3B0E52DAFEF3D0033C12D /* Storage */,
+				62D3B0E72DAFEF3D0033C12D /* Supabase */,
+			);
+			productName = SudokuHatchling;
+			productReference = 62D3B0A52DAFE6AF0033C12D /* SudokuHatchling.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		62D3B09D2DAFE6AF0033C12D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					62D3B0A42DAFE6AF0033C12D = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = 62D3B0A02DAFE6AF0033C12D /* Build configuration list for PBXProject "SudokuHatchling" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 62D3B09C2DAFE6AF0033C12D;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 62D3B0A62DAFE6AF0033C12D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				62D3B0A42DAFE6AF0033C12D /* SudokuHatchling */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		62D3B0A32DAFE6AF0033C12D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62D3B0A12DAFE6AF0033C12D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		62D3B0C42DAFE6B10033C12D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9BACW4LT26;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		62D3B0C52DAFE6B10033C12D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9BACW4LT26;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		62D3B0C72DAFE6B10033C12D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9BACW4LT26;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SudokuHatchling/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AG.SudokuHatchling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		62D3B0C82DAFE6B10033C12D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9BACW4LT26;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SudokuHatchling/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AG.SudokuHatchling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62D3B0A02DAFE6AF0033C12D /* Build configuration list for PBXProject "SudokuHatchling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62D3B0C42DAFE6B10033C12D /* Debug */,
+				62D3B0C52DAFE6B10033C12D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62D3B0C62DAFE6B10033C12D /* Build configuration list for PBXNativeTarget "SudokuHatchling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62D3B0C72DAFE6B10033C12D /* Debug */,
+				62D3B0C82DAFE6B10033C12D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		62D3B0DD2DAFEF3D0033C12D /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		62D3B0DF2DAFEF3D0033C12D /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		62D3B0E12DAFEF3D0033C12D /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		62D3B0E32DAFEF3D0033C12D /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		62D3B0E52DAFEF3D0033C12D /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		62D3B0E72DAFEF3D0033C12D /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62D3B0D62DAFE7FD0033C12D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 62D3B09D2DAFE6AF0033C12D /* Project object */;
+}
