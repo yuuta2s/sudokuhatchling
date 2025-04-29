@@ -16,71 +16,61 @@ struct WelcomePage: View {
         @Bindable var router = router
         
         NavigationStack(path : $router.homeRoutes) {
+            ZStack(alignment: .bottom) {
+                Image(.waveWelcome)
+                    .resizable()
+                    .scaledToFit()
+                    
+                    .frame(maxWidth: .infinity, alignment: .bottom)
+                
                 VStack(){
                     Text("Welcome to")
                         .font(.custom("Summary Notes", size: 40))
                         .foregroundColor(.black)
-
+                    
                     Image("LogoSudoku")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 100)
-
+                    
                     Image("OwlStart")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 200)
-
-                    Text("Crack the puzzles, spread your wings,\n and become a Sudoku master!")
+                    
+                    Text("Crack the puzzles, spread your wings,\nand become a Sudoku master!")
                         .font(.custom("Summary Notes", size: 28 ))
                         .foregroundColor(.black)
-
+                    
+                    
                     Button(action: {
-                        router.homeRoutes.append(.game("beginner"))
+                        router.homeRoutes.append(.chooseDifficulty)
                     }) {
-                        Image(.letsStartButton)
+                        Image(.btnLetsStart)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 318, height: 82)
                     }
                     
-                    Button(action: {
-                        Task{
-                           try await signOut()
-                            print("c bon")
-                            appState = .unauthenticated
-                        }
-                    }) {
-                        Image(.backButton)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 318, height: 82)
+                }.frame(maxWidth: .infinity,maxHeight: .infinity)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(0)
+                    .foregroundStyle(.black)
+                    .navigationDestination(for: HomeRoute.self) { route in
+                        route.destination(appState: $appState)
                     }
-                
-                }.padding(.bottom, 20)
-                .multilineTextAlignment(.center)
-                .lineSpacing(0)
-                .foregroundStyle(.black)
-                .frame(maxWidth: .infinity)
-                .background(
-                    Image(.waveLoginRegister)
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea(edges: .top))
-                .navigationDestination(for: HomeRoute.self) { route in
-                    route.destination
-                }
-                .fullScreenCover(isPresented: $isPresented, content: {
-                    OnBoarding(isPresented: $isPresented)
-                })
-                  
-            }
-           
+                    .fullScreenCover(isPresented: $isPresented, content: {
+                        OnBoarding(isPresented: $isPresented)
+                    })
+            }.frame(maxWidth: .infinity,maxHeight: .infinity).ignoresSafeArea(edges: .bottom)
+        }
+        
     }
 }
 
 #Preview {
-    WelcomePage(appState: .constant(.authenticated), isPresented: true).environment(Router())}
+    WelcomePage(appState: .constant(.authenticated), isPresented: false).environment(Router())
+}
 
 
 private extension WelcomePage{
@@ -94,3 +84,5 @@ private extension WelcomePage{
         }
     }
 }
+
+

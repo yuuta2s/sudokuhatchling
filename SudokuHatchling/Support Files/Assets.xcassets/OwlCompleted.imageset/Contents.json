@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Button Sudoku (1).svg",
+      "filename" : "OwlCompleted.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "OwlCompleted@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "OwlCompleted@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -11,14 +11,14 @@ enum HomeRoute: Hashable{
     case chooseDifficulty, game(String), completedGame
     
     @ViewBuilder
-    var destination: some View{
+    func destination(appState : Binding<AppState>)-> some View{
         switch self{
         case .chooseDifficulty:
             ChooseDifficultyView()
         case .game(_):
             SudokuGrid()
         case .completedGame:
-            CompletedGameView()
+            CompletedGameView(appState: appState)
         }
     }
 }

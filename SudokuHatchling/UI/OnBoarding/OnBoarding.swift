@@ -46,7 +46,10 @@ struct OnBoarding: View {
                   isPresented = false
                 }
             }) {
-                Text("Next").font(.summaryNotes(size: 40)).foregroundStyle(.red)
+                Image(.btnNext)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 318, height: 82)
             }
             
             if onBoardingStep.shouldShowBackButton {
@@ -56,7 +59,10 @@ struct OnBoarding: View {
                         self.onBoardingStep = steps[index - 1]
                     }
                 }) {
-                    Text("Back").font(.summaryNotes(size: 40)).foregroundStyle(.black)
+                    Image(.btnBack)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 318, height: 82)
                 }
             }
         }.frame(maxHeight: .infinity)
