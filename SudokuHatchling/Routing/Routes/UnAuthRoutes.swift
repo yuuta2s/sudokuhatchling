@@ -10,7 +10,7 @@ import SwiftUI
 enum UnAuthRoutes: Hashable{
     
     
-    case signIn,signUp
+    case signIn,signUp,insertName
     
     @ViewBuilder
     func destination(appState: Binding<AppState>) -> some View{
@@ -19,6 +19,8 @@ enum UnAuthRoutes: Hashable{
             LoginView(appState: appState)
         case .signUp:
             RegisterView()
+        case .insertName:
+            TellMeYourNameView(appState : appState)
         }
     }
 }

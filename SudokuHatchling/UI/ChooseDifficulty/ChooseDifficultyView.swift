@@ -12,29 +12,35 @@ struct ChooseDifficultyView: View {
     @State private var selectedDifficulty: Difficulty = .beginner
 
     var body: some View {
-        @Bindable var router = router
-        VStack() {
+        VStack(spacing: 36) {
             Text("Choose Your Challenge Level:")
-                .font(.summaryNotes(size: 36)).padding(.top,60)
+                .font(.summaryNotes(size: 36))
 
-            ForEach(Difficulty.allCases) { difficulty in
-                DifficultyRadioButton(difficulty: difficulty, selectedDifficulty: $selectedDifficulty)
+            VStack(spacing: 24){
+                ForEach(Difficulty.allCases) { difficulty in
+                    DifficultyRadioButton(difficulty: difficulty,
+                                          selectedDifficulty: $selectedDifficulty)
+                }
             }
+            
 
+            Spacer()
             Button(action: {
                 print("Difficulté sélectionnée : \(selectedDifficulty.realValue)")
                 router.homeRoutes.append(.game(selectedDifficulty.realValue))
             }){
-                Image(.btnContinue)
+                Image(.btnLetsPlay)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 318, height: 82)
             }
-            .padding(.bottom, 30)
-        }
-        .padding()
-        .background(Image(.waveDifficulty).resizable().scaledToFit())
-        .navigationBarBackButtonHidden()
+           
+        }.frame(maxWidth: .infinity,maxHeight: .infinity)
+         .padding(.horizontal,24)
+         .padding(.top,50)
+         .padding(.bottom, 30)
+         .background(Image(.waveDifficulty).resizable().scaledToFill().ignoresSafeArea())
+         .navigationBarBackButtonHidden()
     }
 }
 

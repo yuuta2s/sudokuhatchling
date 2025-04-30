@@ -16,7 +16,7 @@ class RegisterViewModel : ObservableObject{
     var userMessage : String?
     var isUserRegistered : Bool = false
     
-    func SignUp() async throws{
+    func signUp() async throws{
         if password != confirmPassword{
             userMessage = "Les mots de passe ne sont pas identiques"
             return

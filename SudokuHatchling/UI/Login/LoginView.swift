@@ -62,16 +62,7 @@ struct LoginView: View {
                         .cornerRadius(8)
                 }
                 
-                Button(action: {
-                    Task{
-                        do{
-                            try await vm.logout()
-                        }
-                    }
-                }, label: {
-                    Text("Log out")
-                })
-                
+              
             }.navigationDestination(for: UnAuthRoutes.self) {
                 route in
                 route.destination(appState: $appState)

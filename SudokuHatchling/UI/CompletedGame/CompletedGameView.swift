@@ -11,15 +11,17 @@ struct CompletedGameView: View {
     @Environment(Router.self) var router
     @Binding var appState : AppState
     var body: some View {
-        @Bindable var router = router
         ZStack{
             Text("Completed Game!!")
             Button(action: {
-                appState = .authenticated
+                router.homeRoutes.removeAll()
             }, label: {
-                Image(.btnBack).resizable()
+                Image(.btnContinue)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 318, height: 82)
             })
-        }
+        }.navigationBarBackButtonHidden()
        
     }
 }

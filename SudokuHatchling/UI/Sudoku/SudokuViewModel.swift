@@ -14,14 +14,7 @@ class SudokuViewModel {
     var sudokuGrid: [[Int]] = []
     var solvedGrid : [[Int]] = []
     var mySudokuPuzzle : SudokuPuzzle = SudokuPuzzle(uuid: "" , problem_grid: [], solution_grid: [], difficulty: "")
-    
-    func getGrid(difficulty : String) async throws{
-            try await supabase
-            .from("sudoku_puzzles")
-            .select()
-            .execute()
-            .value
-    }
+
     
     func getFakeGrid(){
         let mat = [
@@ -62,4 +55,17 @@ class SudokuViewModel {
 sudokuGrid = mat
 solvedGrid = solvedMat
     }
+    
+    func getGrid(difficulty: String) async throws {
+            let response = try await supabase
+                .from("sudoku_puzzles")
+                .select()
+                .eq("difficulty", value: difficulty)
+                .limit(1)
+                .single()
+                .execute()
+    }
 }
+
+
+

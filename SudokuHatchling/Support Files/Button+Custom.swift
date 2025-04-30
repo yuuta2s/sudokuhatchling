@@ -18,39 +18,43 @@ struct DifficultyRadioButton: View {
             HStack(spacing:32) {
                 difficulty.difficultyIcon
                     .resizable()
-                    .frame(width: 50, height: 60).padding()
+                    .frame(width: 50, height: 60)
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(difficulty.difficultyName)
                         .font(.summaryNotes(size: 32))
+                        .foregroundStyle(.black)
+
                     Text(difficulty.smallTitle)
                         .font(.summaryNotes(size: 16))
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                 }
                 Spacer()
                 ZStack {
                     Circle()
-                        .stroke(Color.accentColor, lineWidth: 2)
-                        .background(Circle().fill(Color.white))
+                        .fill(.shadow(.inner(color: .gray,radius: 3, x: 0,y: 1 )))
+                        .foregroundColor(.white)
                         .frame(width: 30, height: 30)
-                        .shadow(color: .gray, radius: 3, x: 0, y: 1)
-                        .padding()
+                       
+                       
                         
-
                     if selectedDifficulty == difficulty {
                         Circle()
+                            .stroke(.white, lineWidth: 1)
+                            .frame(width: 36, height: 36)
+                        
+                        Circle()
                             .fill(Color.accentColor)
-                            .frame(width: 12, height: 12)
+                            .frame(width: 20, height: 20)
                     }
                 }
 
               
             }
-            .padding(8)
         }
-        .buttonStyle(PlainButtonStyle())
+       
     }
 }
 #Preview {
-    DifficultyRadioButton(difficulty: .beginner, selectedDifficulty: .constant(.beginner))
+    DifficultyRadioButton(difficulty: .beginner, selectedDifficulty: .constant(.beginner)).background(.accent)
 }

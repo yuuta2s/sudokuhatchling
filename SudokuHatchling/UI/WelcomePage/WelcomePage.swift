@@ -10,7 +10,11 @@ import SwiftUI
 struct WelcomePage: View {
     @Environment(Router.self) var router
     @Binding var appState : AppState
-    @State var isPresented : Bool
+    @AppStorage("isFirstVisit") var isPresented : Bool = true
+    @State var vm = WelcomePageViewModel()
+
+    
+
     
     var body: some View {
         @Bindable var router = router
@@ -64,6 +68,18 @@ struct WelcomePage: View {
                     })
             }.frame(maxWidth: .infinity,maxHeight: .infinity).ignoresSafeArea(edges: .bottom)
         }
+        
+        Button(action: {
+            Task{
+                do{
+                    try await vm.logout()
+                }
+                appState = .unauthenticated
+            }
+        }, label: {
+            Text("Log out")
+        })
+        
         
     }
 }

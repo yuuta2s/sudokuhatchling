@@ -17,7 +17,6 @@ struct OnBoarding: View {
     
     
     var body: some View {
-        @Bindable var router = router
 
         VStack(spacing: 30){
             Text(onBoardingStep.title)

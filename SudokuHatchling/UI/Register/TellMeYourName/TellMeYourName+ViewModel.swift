@@ -11,6 +11,7 @@ import Foundation
 class TellMeYourNameViewModel{
     var name: String = ""
     var userMessage : String = ""
+    var isNameAdded : Bool = false
     
     
     func insertName() async throws{
@@ -21,7 +22,11 @@ class TellMeYourNameViewModel{
                }
         
         do {
-            try await supabase.from("users_profiles").insert(name).execute()
+            try await supabase.from("users_profiles")
+              .update(["username": name])
+              .eq("id", value: userId)
+              .execute()
+            isNameAdded = true
         }catch let error {
             userMessage = "Erreur d'ajout de nom : \(error)"
             throw error

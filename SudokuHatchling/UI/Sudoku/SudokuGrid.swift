@@ -17,11 +17,10 @@ struct SudokuGrid: View {
     
     
     var body: some View {
-        @Bindable var router = router
         VStack {
             HStack(alignment: .firstTextBaseline){
                 Button(action: {
-                   
+                    router.homeRoutes.removeLast()
                 }, label: {
                     Image(.closeButton)
                         .resizable()
@@ -78,29 +77,33 @@ struct SudokuGrid: View {
             Task{
                 vm.getFakeGrid()
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
 private extension SudokuGrid {
-    private func solveSudokuGrid(){
+    private func solveSudokuGrid() {
         errorCells.removeAll()
         
+        var hasEmptyCells = false
         for row in 0..<9 {
             for col in 0..<9 {
-                if vm.sudokuGrid[row][col] != 0 && vm.sudokuGrid[row][col] != vm.solvedGrid[row][col] {
+                let currentValue = vm.sudokuGrid[row][col]
+                if currentValue == 0 {
+                    hasEmptyCells = true
+                } else if currentValue != vm.solvedGrid[row][col] {
                     errorCells.insert([row, col])
                 }
             }
         }
-        if errorCells.isEmpty{
-            isSolved =  true
+        
+        if errorCells.isEmpty && !hasEmptyCells {
+            isSolved = true
             goToCompleted()
             print("Grille complétée \(isSolved)")
-        }else {
+        } else {
             isSolved = false
-            print("Grille erronée")
-            
+            print("Grille erronée ou incomplète")
         }
     }
     

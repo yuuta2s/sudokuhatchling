@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var isFirstSplashDone = false
     @State private var isSplashShowing = true
     @State private var appState : AppState = .splash
-    @State private var isPresented : Bool = false
+    @AppStorage("isFirstVisit") var isFirstVisit : Bool = true
     
     var body: some View {
         Group{
@@ -24,25 +24,20 @@ struct ContentView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                         isSplashShowing = false
                         let userISignedIn = checkIfLogged()
-                        
-                        if userISignedIn && checkIfFirstVisit(){
-                            isPresented = true
-                        }
                         appState = userISignedIn ? .authenticated : .unauthenticated
+                        checkFirstVisit()
                     }
                 }
             case .authenticated :
-                WelcomePage(appState: $appState, isPresented: isPresented)
+                WelcomePage(appState: $appState, isPresented: isFirstVisit)
             case .unauthenticated :
                 LoginView(appState: $appState)
             }
         }
-        
     }
 }
 
 private extension ContentView{
-    
     private func checkIfLogged()-> Bool{
         if supabase.auth.currentSession != nil{
             return true
@@ -51,13 +46,12 @@ private extension ContentView{
         }
     }
     
-    private func checkIfFirstVisit() -> Bool {
-        let isFirstVisit = !UserDefaults.standard.bool(forKey: "notFirstVisit")
-        if isFirstVisit {
-            UserDefaults.standard.set(true, forKey: "notFirstVisit")
-        }
-        return isFirstVisit
+    private func checkFirstVisit(){
+        if UserDefaults.standard.object(forKey: "isFirstVisit") == nil{
+            UserDefaults.standard.set(true, forKey: "isFirstVisit")
+         }
     }
+    
 }
 
 enum AppState{
@@ -65,3 +59,4 @@ enum AppState{
     case unauthenticated
     case splash
 }
+
